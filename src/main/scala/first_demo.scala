@@ -4,22 +4,22 @@ import org.apache.spark.sql._
 import org.apache.spark.sql.types._
 
 
-
-
 object first_demo {
   def main(args: Array[String]): Unit = {
     val conf=new SparkConf().setMaster("local[*]").setAppName("first_demo")
 
     val sc=new SparkContext(conf)
 
-//    val rdd=sc.parallelize(Array(5,10,30))
-
-
     val appName = "Scala Example - List to Spark Data Frame"
     val master = "local"
     /*Create Spark session with Hive supported.*/
-    val spark = SparkSession.builder.appName(appName).master(master).getOrCreate()
-
+    val spark = SparkSession
+      .builder
+      .appName(appName)
+      .master(master)
+      .getOrCreate()
+    // For implicit conversions like converting RDDs to DataFrames
+    import spark.implicits._
 
     /* List */
     val data = List(Row("Category A", 100, "This is category A"),
@@ -39,6 +39,8 @@ object first_demo {
     val df = spark.createDataFrame(rdd, schema)
     print(df.schema)
     df.show()
+
+
 
 
 
