@@ -9,7 +9,7 @@ object first_steps_chapter {
   // if we don't use recursion, we can write func without defining an output type
   def max_1(x: Int, y: Int) = if (x > y) x else y
 
-
-
+  var str_ = List("Concise", "is", "nice")
+  str_.foreach(println)
 
 }
