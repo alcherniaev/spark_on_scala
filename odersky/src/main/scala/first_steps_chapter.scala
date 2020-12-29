@@ -12,4 +12,10 @@ object first_steps_chapter {
   var str_ = List("Concise", "is", "nice")
   str_.foreach(println)
 
+  // kew-word new creates Class. [] - type, () - length
+  val greetStrings = new Array[String](3)
+  // same, but more concrete
+  val greetStrings_ : Array[String] = new Array[String](3)
+
+  // lists
 }
