@@ -106,4 +106,15 @@ object first_steps_chapter {
   import scala.collection.immutable.HashSet
   val hashSet = HashSet("Tomatoes", "Chilies")
   println(hashSet + "Coriander")
+
+  // Map mutable
+  import scala.collection.mutable
+  val treasure_map = mutable.Map[Int, String]()
+  treasure_map += (1 -> "Go to island")
+  treasure_map += (2 -> "Find big X on ground")
+  treasure_map += (3 -> "Dig")
+  println(treasure_map(2))
+  // Map immutable
+  val romanNumeral = Map(1 -> "I", 2 -> "II", 3 -> "III", 4 -> "IV", 5 -> "V")
+  println(romanNumeral(4))
 }
