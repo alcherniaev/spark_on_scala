@@ -84,6 +84,11 @@ object first_steps_chapter {
   // sorting
   thrill.sorted
 
+  // tuple. acces to first element is ._1, not 0
+  var pair = (99,  "Luftballons")
+  println(pair)
+  println(pair._1)
+  println(pair._2)
 
-
+  
 }
