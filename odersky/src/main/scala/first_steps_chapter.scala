@@ -84,6 +84,11 @@ object first_steps_chapter {
   // sorting
   thrill.sorted
 
+  // make strings! if i print, it returns elements as a string, not a list(el1, el2, el3). just el1, el2, el3
+  val str = thrill.mkString(", ")
+  println(thrill)
+  println(str)
+
   // tuple. access to first element is ._1, not 0. allow to contain any type (Int, Str, etc)
   var pair = (99,  "Luftballons")
   println(pair)
@@ -117,4 +122,12 @@ object first_steps_chapter {
   // Map immutable
   val romanNumeral = Map(1 -> "I", 2 -> "II", 3 -> "III", 4 -> "IV", 5 -> "V")
   println(romanNumeral(4))
+
+  // reading files
+  import scala.io.Source
+  val lines = Source.fromFile("/Users/alcherniaev/IdeaProjects/test_spark/odersky/some_example.txt").getLines().toList
+  println(lines)
+  // reduceLeft apply func to first 2 elements, then for this result and third etc
+  val longest_line = lines.reduceLeft((a, b) => if (a.length > b.length) a else b)
+  println(longest_line)
 }
