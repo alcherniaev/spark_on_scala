@@ -84,11 +84,26 @@ object first_steps_chapter {
   // sorting
   thrill.sorted
 
-  // tuple. acces to first element is ._1, not 0
+  // tuple. access to first element is ._1, not 0. allow to contain any type (Int, Str, etc)
   var pair = (99,  "Luftballons")
   println(pair)
   println(pair._1)
   println(pair._2)
 
-  
+  // Set can be mutable and immutable
+  //immutable
+  var jet_set = Set("Boeing", "Airbus")
+  jet_set += "Bombardier" // return a new jet_set
+  println(jet_set)
+  println(jet_set.contains("Sukhoy"))
+  // mutable requires importing
+  import scala.collection.mutable
+  val movie_set = mutable.Set("Hitch", "Poltergeist")
+  movie_set += "Shrek"
+  println(movie_set)
+
+  // HashSet
+  import scala.collection.immutable.HashSet
+  val hashSet = HashSet("Tomatoes", "Chilies")
+  println(hashSet + "Coriander")
 }
