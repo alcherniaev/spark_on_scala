@@ -130,4 +130,31 @@ object first_steps_chapter {
   // reduceLeft apply func to first 2 elements, then for this result and third etc
   val longest_line = lines.reduceLeft((a, b) => if (a.length > b.length) a else b)
   println(longest_line)
+
+  // declare a Class and assign to new varible
+  class Check_sum_accumulator {var sum = 0}
+  val acc = new Check_sum_accumulator
+  // private varible inside class. can be used inside class' methods only
+  class Check_sum_privat {private var sum = 0}
+  val acc_private = new Check_sum_privat
+  //acc_private.sum = 5 // returns inaccessible error
+  class Check_sum_privat_2 {
+    private var sum = 0
+    def add(b: Byte): Unit = {
+      sum += b
+    }
+    def check_sum(): Int = {
+      return ~(sum & 0xFF) + 1
+
+    }
+  }
+  // rewrite class in a short way
+  // we don't need return here because Scala returns single value by default
+  class short_sum {
+    private var sum = 0
+    def add(b: Byte) = sum += b
+    def check_sum() = ~(sum & 0xFF) + 1
+  }
+
+
 }
