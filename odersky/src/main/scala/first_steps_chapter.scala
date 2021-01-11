@@ -155,6 +155,6 @@ object first_steps_chapter {
     def add(b: Byte) = sum += b
     def check_sum() = ~(sum & 0xFF) + 1
   }
-
-
+  // about the ";" sign
+  val say_hello = "hello"; print(say_hello) // ; useful for writing in one line, separated by the ";" sign
 }
