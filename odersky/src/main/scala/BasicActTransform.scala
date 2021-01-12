@@ -27,7 +27,8 @@ object BasicActTransform {
     val squares_ = num.map(x => x * x )
     squares_.collect().foreach(println) // prints 1, 4, 9
 
-    
+    //flatMap
+    num.flatMap(x => 0.to(x)).collect().foreach(println) // prints 0, 1, 0, 1, 2, 0, 1, 2, 3
   }
 
 
