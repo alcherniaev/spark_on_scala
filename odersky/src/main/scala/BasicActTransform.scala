@@ -16,7 +16,16 @@ object BasicActTransform {
     // prints each element of RDD
     //prints 1 2 3 on separate line
     num.collect().foreach(println) // collect is not a good idea, though, when the RDD has billions of lines.
-    num.take(3).foreach(println) // use take() to take just a few to print out:
+    num.take(3).foreach(println) // use take() to take just a few to print out
+
+    // filter
+    val equal_two = num.filter(x => x == 2)
+    equal_two.collect().foreach(println) // prints 2
+
+    //map
+    import scala.math.pow
+    val squares_ = num.map(x => x * x )
+    squares_.collect().foreach(println) // prints 1, 4, 9
   }
 
 
