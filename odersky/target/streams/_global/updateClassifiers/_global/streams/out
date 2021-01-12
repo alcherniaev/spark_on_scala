@@ -1,3 +1,4 @@
 [debug] not up to date. inChanged = true, force = false
 [debug] Updating ProjectRef(uri("file:/Users/alcherniaev/IdeaProjects/test_spark/odersky/"), "odersky")...
 [debug] Done updating ProjectRef(uri("file:/Users/alcherniaev/IdeaProjects/test_spark/odersky/"), "odersky")
+[warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
