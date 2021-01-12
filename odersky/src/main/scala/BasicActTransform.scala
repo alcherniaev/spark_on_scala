@@ -26,6 +26,8 @@ object BasicActTransform {
     import scala.math.pow
     val squares_ = num.map(x => x * x )
     squares_.collect().foreach(println) // prints 1, 4, 9
+
+    
   }
 
 
