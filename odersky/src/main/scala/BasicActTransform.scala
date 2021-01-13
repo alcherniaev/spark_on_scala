@@ -29,6 +29,10 @@ object BasicActTransform {
 
     //flatMap
     num.flatMap(x => 0.to(x)).collect().foreach(println) // prints 0, 1, 0, 1, 2, 0, 1, 2, 3
+
+    // mapPartition
+    val nump = num.mapPartitions(x => x.map(x => x * x)) // pass each partition through a function
+    nump.collect().foreach(println) // prints 1, 4, 9
   }
 
 
