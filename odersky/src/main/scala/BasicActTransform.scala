@@ -22,7 +22,7 @@ object BasicActTransform {
 
     // Transformations
 
-    
+
     // filter
     val equal_two = num.filter(x => x == 2)
     equal_two.collect().foreach(println) // prints 2
@@ -49,7 +49,12 @@ object BasicActTransform {
 
 
     // Actions
-
+    
+    num.collect()
+    num.take(2)
+    num.count()
+    num.reduce((x, y) => x + y)
+    num.saveAsTextFile("hdfs://file.txt")
 
   }
 
