@@ -33,6 +33,16 @@ object BasicActTransform {
     // mapPartition
     val nump = num.mapPartitions(x => x.map(x => x * x)) // pass each partition through a function
     nump.collect().foreach(println) // prints 1, 4, 9
+
+
+    // union, intersect, cartesian
+    val num2 = spark.sparkContext.parallelize(List(3, 4, 5))
+
+    num.union(num2).collect().foreach(println)
+    num.intersection(num2).collect().foreach(println)
+    num.cartesian(num2).collect().foreach(println)
+
+
   }
 
 
