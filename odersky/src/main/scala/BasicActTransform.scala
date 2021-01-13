@@ -18,6 +18,11 @@ object BasicActTransform {
     num.collect().foreach(println) // collect is not a good idea, though, when the RDD has billions of lines.
     num.take(3).foreach(println) // use take() to take just a few to print out
 
+
+
+    // Transformations
+
+    
     // filter
     val equal_two = num.filter(x => x == 2)
     equal_two.collect().foreach(println) // prints 2
@@ -41,6 +46,9 @@ object BasicActTransform {
     num.union(num2).collect().foreach(println)
     num.intersection(num2).collect().foreach(println)
     num.cartesian(num2).collect().foreach(println)
+
+
+    // Actions
 
 
   }
