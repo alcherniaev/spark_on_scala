@@ -66,6 +66,9 @@ object BasicActTransform {
 
     // groupByKey
     pets.groupByKey().collect().foreach(println) // prints (dog,CompactBuffer(1)), (cat,CompactBuffer(1, 2))
+
+    // sortByKey
+    pets.sortByKey().collect().foreach(println) // prints (cat,1), (cat,2), (dog,1)
   }
 
 
