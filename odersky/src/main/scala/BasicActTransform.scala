@@ -49,13 +49,19 @@ object BasicActTransform {
 
 
     // Actions
-    
+
     num.collect()
     num.take(2)
     num.count()
     num.reduce((x, y) => x + y)
-    num.saveAsTextFile("hdfs://file.txt")
+    //num.saveAsTextFile("hdfs://file.txt")
 
+    // Some Key-Value Operators
+
+    // reduceByKey
+    val pets = spark.sparkContext.parallelize(
+      List(("cat", 1), ("dog", 1), ("cat", 2)))
+    pets.reduceByKey(_ + _).collect().foreach(println)
   }
 
 
